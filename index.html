@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机选择发言</title>
+    <style>
+        .box{
+
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+
+            /*
+               文字阴影：
+               text-shadow: 水平位移 垂直位移  模糊程度  阴影颜色;
+           */
+            font: 700 100px "Comic Sans MS";
+            color: white;
+            /*text-shadow: 0 0 20px #fdec84,*/
+            /*10px -10px 30px #ffae35,*/
+            /*20px -20px 40px #ec760c,*/
+            /*-20px -60px 50px #cd4607,*/
+            /*0px -80px 60px #973717,*/
+            /*10px -40px 70px #451b0e;*/
+
+            animation: fireDiv 1s infinite;
+            /*text-shadow: 0px 24px 60px #FD5A1C99;;*/
+        }
+
+        body {
+            text-align: center;
+            background-color: black;
+        }
+
+        .history{
+            width: 328px;
+            height: 580px;
+            right: 0;
+            top: 318px;
+            position: fixed;
+            z-index: 888;
+            text-align: right;
+            /*background: url("img/selected.jpg");*/
+            list-style: none;
+            font-family: '幼圆';
+            font-weight: 900;
+            color: #fcea80;
+            font-size: 22px;
+            display: none;
+        }
+
+        @keyframes fireDiv {
+            0% {
+                text-shadow: 0 0 4px white, 0 -5px 4px #ff3, 2px -10px 6px #fd3,
+                -2px -15px 11px #f80, 2px -25px 18px #f20;
+            }
+            25% {
+                text-shadow: 0 0 4px white, 2px -7px 6px #ff3, 2px -12px 8px #fd3,
+                -3px -20px 11px #f80, 4px -30px 22px #f20;
+            }
+            50% {
+                text-shadow: 0 0 4px white, 2px -10px 8px #ff3, 2px -14px 10px #fd3,
+                -4px -25px 11px #f80, 4px -35px 25px #f20;
+            }
+            75% {
+                text-shadow: 0 0 4px white, 2px -7px 6px #ff3, 2px -12px 8px #fd3,
+                -3px -20px 11px #f80, 4px -30px 22px #f20;
+            }
+            100% {
+                text-shadow: 0 0 4px white, 0 -5px 4px #ff3, 2px -10px 6px #fd3,
+                -2px -15px 11px #f80, 2px -25px 18px #f20;
+            }
+        }
+        .show{
+            position:absolute;
+            top:30%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            display: none;
+            z-index: 999;
+            width: 1100px;
+            /*background: url("img/dialog.jpg");*/
+        }
+        @font-face {
+            font-family: '楷体1';
+            src: url("font/庞门正道粗书体-正式版.ttf");
+        }
+        .msg-content{
+            text-align: left;
+            background: white;
+            padding: 20px;
+            font-size: 76px;
+            font-family: 楷体1;
+            border-radius: 10px;
+            box-shadow: 3px 3px #deb5b5;
+            background: #f3e7e766;
+            border: 1px solid #ff8531;
+            line-height: 83px;
+            color: #e2e183;
+        }
+        .dept{
+            font-size: 40px;text-align: right;
+        }
+    </style>
+</head>
+<body style="background: url('img/bg1.jpg')">
+<body>
+
+
+<div id="div1" class="box" onclick="">按任意键开始</div>
+<div class="show">
+    <div  class="msg-content">
+        <div id="msg"></div>
+        <div id="dept" class="dept"></div>
+    </div>
+</div>
+<div class="history">
+    <img style="width: 300px" src="img/select.png"/>
+    <div id="history" style="margin: 20px 80px;line-height: 40px; ">
+
+    </div>
+</div>
+<script src="jquery.min.js" type="application/javascript"></script>
+<script>
+
+    let data = null;
+    let arr = null;
+
+    let flag = null;
+
+    let selected = ""
+
+
+    let interval
+    function start(){
+        let size = arr.length;
+        interval = setInterval(function () {
+            let n = Math.floor(Math.random() * size);
+            console.log(n)
+            document.getElementById("div1").innerText = arr[n];
+
+            if(flag==1){
+                clearInterval(interval)
+                show(arr[n]);
+                arr.splice(n,1)
+            }
+        },100)
+    }
+    function history(){
+        let ss = selected.split(",")
+        $("#history").empty();
+        if(ss && ss.length>0){
+            let f = false
+            for (let s of ss){
+                if(s){
+                    $("#history").append("<li style='margin:10px' ss='"+s+"' onclick='delHis(this)'>"+s+"</li>")
+                    f = true;
+                }
+            }
+            if(f){
+                setTimeout(()=>{
+                    $(".history").slideDown()
+                },3000)
+            }
+        }
+
+    }
+
+    function delHis(obj){
+
+        let r = confirm("确认删除吗？");
+        if(r == true){
+            let key = $(obj).attr("ss");
+            selected = selected.replaceAll(key,"")
+            console.log(selected)
+            localStorage.setItem("hasSlected",selected)
+            arr.push(key);
+            history();
+        }
+    }
+    function show(key){
+        selected+=key+","
+        localStorage.setItem("hasSlected",selected);
+        console.log(key)
+        console.log(data[key])
+        $("#msg").html(data[key].msg)
+        $("#dept").html(data[key].dept)
+        $(".show").slideDown();
+        flag = 3;
+        history();
+
+    }
+
+    function handle(){
+        if(flag){
+            if(flag == 1){
+                flag = 2;
+                start()
+            }else if(flag==3){
+                $(".show").slideUp();
+                flag =1;
+            }else{
+                flag = 1;
+            }
+        }
+    }
+
+    $(document).keypress(function (e){
+        handle()
+    });
+
+
+    function init(){
+        selected = localStorage.getItem("hasSlected")||""
+
+        $.getJSON("data.json",function(res){
+            data = res
+            arr = new Array();
+            $.each(data,key=>{
+                if(!selected || selected.indexOf(key)<0){
+                    arr.push(key)
+                }
+            })
+            console.log(data)
+            console.log(arr)
+        })
+
+
+        flag = 1;
+        console.log("加载完成。。。")
+        history();
+    }
+    $(function(){
+        init();
+    })
+
+
+
+
+</script>
+</body>
+
+</body>
+</html>
