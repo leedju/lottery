@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7003c2c-478e-4e66-bcfa-da713321bd96" name="Default Changelist" comment="" />
+    <list default="true" id="d7003c2c-478e-4e66-bcfa-da713321bd96" name="Default Changelist" comment="init">
+      <change afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/font/庞门正道粗书体-正式版.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/font/庞门正道粗书体.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1tTVdcymU7mIuLR07rJYK38bLRI" />
   <component name="ProjectViewState">
@@ -17,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lottery/lottery" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -51,24 +59,55 @@
       <workItem from="1623035139296" duration="6595000" />
       <workItem from="1623133491465" duration="600000" />
       <workItem from="1623305262915" duration="25654000" />
+      <workItem from="1623833105618" duration="1176000" />
+      <workItem from="1624505747171" duration="9668000" />
+      <workItem from="1624958653142" duration="594000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1623833129859</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623833129859</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="WindowStateProjectService">
     <state x="653" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1623404263179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="653" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1623404263179" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1622794225587">
+    <state x="558" y="86" key="CommitChangelistDialog2" timestamp="1623833474283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622794225587" />
+    <state x="558" y="86" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1623833474283" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1624586780299">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1624586780299" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1623833477539">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623833477539" />
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623833386915">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623833386915" />
     <state x="662" y="223" width="596" height="594" key="find.popup" timestamp="1623374630346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="662" y="223" width="596" height="594" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1623374630346" />
+    <state x="761" y="426" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1623833151675">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="761" y="426" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623833151675" />
   </component>
 </project>
